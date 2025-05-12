@@ -1,0 +1,149 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@company.com",
+        "phone": "+1-555-123-4567",
+        "department": "Engineering",
+        "position": "Senior Developer",
+        "salary": 95000,
+        "status": "Active",
+        "joinDate": "2021-03-15"
+      },
+      {
+        "id": 2,
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "jane.smith@company.com",
+        "phone": "+1-555-987-6543",
+        "department": "Marketing",
+        "position": "Marketing Manager",
+        "salary": 85000,
+        "status": "Active",
+        "joinDate": "2020-07-22"
+      },
+      {
+        "id": 3,
+        "firstName": "Robert",
+        "lastName": "Johnson",
+        "email": "robert.j@company.com",
+        "phone": "+1-555-345-6789",
+        "department": "HR",
+        "position": "HR Specialist",
+        "salary": 65000,
+        "status": "Active",
+        "joinDate": "2022-01-10"
+      },
+      {
+        "id": 4,
+        "firstName": "Emily",
+        "lastName": "Davis",
+        "email": "emily.d@company.com",
+        "phone": "+1-555-456-7890",
+        "department": "Engineering",
+        "position": "Frontend Developer",
+        "salary": 78000,
+        "status": "Active",
+        "joinDate": "2021-09-05"
+      },
+      {
+        "id": 5,
+        "firstName": "Michael",
+        "lastName": "Wilson",
+        "email": "m.wilson@company.com",
+        "phone": "+1-555-678-9012",
+        "department": "Finance",
+        "position": "Financial Analyst",
+        "salary": 82000,
+        "status": "On Leave",
+        "joinDate": "2020-11-18"
+      },
+      {
+        "id": 6,
+        "firstName": "Sarah",
+        "lastName": "Brown",
+        "email": "sarah.b@company.com",
+        "phone": "+1-555-890-1234",
+        "department": "Sales",
+        "position": "Sales Representative",
+        "salary": 72000,
+        "status": "Active",
+        "joinDate": "2022-02-28"
+      },
+      {
+        "id": 7,
+        "firstName": "David",
+        "lastName": "Taylor",
+        "email": "david.t@company.com",
+        "phone": "+1-555-234-5678",
+        "department": "Engineering",
+        "position": "Backend Developer",
+        "salary": 80000,
+        "status": "Active",
+        "joinDate": "2021-05-20"
+      },
+      {
+        "id": 8,
+        "firstName": "Lisa",
+        "lastName": "Anderson",
+        "email": "lisa.a@company.com",
+        "phone": "+1-555-345-6789",
+        "department": "Marketing",
+        "position": "Content Specialist",
+        "salary": 68000,
+        "status": "Terminated",
+        "joinDate": "2020-08-15"
+      }
+    ],
+    "departments": [
+      {
+        "id": 1,
+        "name": "Engineering",
+        "employeeCount": 3
+      },
+      {
+        "id": 2,
+        "name": "Marketing",
+        "employeeCount": 2
+      },
+      {
+        "id": 3,
+        "name": "HR",
+        "employeeCount": 1
+      },
+      {
+        "id": 4,
+        "name": "Finance",
+        "employeeCount": 1
+      },
+      {
+        "id": 5,
+        "name": "Sales",
+        "employeeCount": 1
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "name": "Website Redesign",
+        "status": "Active"
+      },
+      {
+        "id": 2,
+        "name": "Mobile App Development",
+        "status": "Active"
+      },
+      {
+        "id": 3,
+        "name": "Customer Portal",
+        "status": "Active"
+      },
+      {
+        "id": 4,
+        "name": "Analytics Dashboard",
+        "status": "On Hold"
+      }
+    ]
+  }

@@ -1,0 +1,40 @@
+ /* Custom styles for better responsiveness */
+ .table-responsive {
+    overflow-x: auto;
+}
+
+.grade-table {
+    min-width: 800px; /* Ensures table doesn't get too compressed */
+    border-collapse: collapse;
+}
+
+.grade-table th, .grade-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Lighter background for sub-headers */
+.sub-header {
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+    
+    .grade-table {
+        font-size: 0.85rem;
+    }
+}
+
+/* Remove right border from empty cells */
+.empty-cell {
+    border-right: none !important;
+  }
+  
+  /* Add border to the next cell after empty cells to maintain table structure */
+  .empty-cell + td {
+    border-left: 1px solid #dee2e6 !important;
+  }

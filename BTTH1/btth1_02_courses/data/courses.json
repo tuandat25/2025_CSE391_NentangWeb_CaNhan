@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Lập trình viên quốc tế",
+    "description": "Chương trình đào tạo chuẩn quốc tế và toàn diện, tập trung vào các công nghệ hiện đại và kỹ năng phát triển phần mềm chuyên nghiệp.",
+    "fee": "15.000.000 VND",
+    "startDate": "02/2024",
+    "duration": "2 - 2.5 năm",
+    "image": "01_aptech.webp"
+  },
+  {
+    "title": "Lập trình Web Fullstack",
+    "description": "Khóa học phù hợp với người bắt đầu, giúp bạn nắm vững các công nghệ phát triển web từ frontend đến backend một cách toàn diện.",
+    "fee": "Ưu đãi giảm 15%",
+    "startDate": "02/2024",
+    "duration": "6 tháng",
+    "image": "01_aptech.webp"
+  },
+  {
+    "title": "Lập trình Mobile App",
+    "description": "Đào tạo kỹ năng phát triển ứng dụng di động trên các nền tảng iOS và Android với React Native hoặc Flutter.",
+    "fee": "12.500.000 VND",
+    "startDate": "03/2024",
+    "duration": "5 tháng",
+    "image": "01_aptech.webp"
+  },
+  {
+    "title": "Kỹ sư AI & Machine Learning",
+    "description": "Chương trình chuyên sâu về trí tuệ nhân tạo và học máy, giúp bạn ứng dụng AI vào các bài toán thực tế trong doanh nghiệp.",
+    "fee": "18.000.000 VND",
+    "startDate": "04/2024",
+    "duration": "8 tháng",
+    "image": "01_aptech.webp"
+  },
+  {
+    "title": "DevOps & Cloud Engineering",
+    "description": "Khóa học chuyên sâu về triển khai, quản lý và tự động hóa quy trình phát triển phần mềm với các nền tảng đám mây hàng đầu.",
+    "fee": "16.500.000 VND",
+    "startDate": "03/2024", 
+    "duration": "7 tháng",
+    "image": "01_aptech.webp"
+  },
+  {
+    "title": "Data Science & Analytics",
+    "description": "Đào tạo kỹ năng phân tích và xử lý dữ liệu lớn, khai phá thông tin giá trị từ dữ liệu phục vụ cho quyết định kinh doanh.",
+    "fee": "14.800.000 VND",
+    "startDate": "05/2024",
+    "duration": "6 tháng",
+    "image": "01_aptech.webp"
+  }
+]

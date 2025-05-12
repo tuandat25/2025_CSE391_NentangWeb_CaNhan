@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid px-0">
+        <div class="row">
+            <!-- Sidebar -->
+            <!-- <div class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse" id="sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <h5 class="text-white">Employee Management</h5>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="#">
+                                <i class="bi bi-speedometer2 me-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <i class="bi bi-people me-2"></i>
+                                Employees
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <i class="bi bi-briefcase me-2"></i>
+                                Departments
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">
+                                <i class="bi bi-gear me-2"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <!-- Navbar header -->
+             <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand text-light fw-bold" href="#">HR Management</a>
+                        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-secondary hover-white" href="#">Contact</a>
+                                </li>
+                            </ul>
+                            <div class="d-flex search-navbar gap-2">
+                                <div class="input-group ">
+                                    <input type="text" class="form-control" id="navbarSearchInput" placeholder="Search employees...">
+                                </div>
+                                <button class="btn btn-outline-light" type="button">Search</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+             </header>
+            <!-- Main Content -->
+            <div class="container">
+                <div class="row">
+                    <!-- Main Content -->
+                    <main class="col-12 py-4">
+                        <!-- Stats Cards -->
+
+                        <!-- Employee Table -->
+                        <div class="card mb-4">
+                            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Employee List</h5>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">
+                                    <i class="bi bi-plus-circle me-2"></i>Add
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Department</th>
+                                                <th scope="col">Position</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTableBody">
+                                            <!-- Employee data will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Empty state for no results -->
+                                <div id="emptyState" class="text-center py-5 d-none">
+                                    <i class="bi bi-search fs-1 text-muted"></i>
+                                    <p class="mt-3">No employees found matching your search criteria.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer class="py-4 border-top">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                                <div class="mb-3 mb-md-0">
+                                    <span>Copyright © 2025 Employee Management System</span>
+                                </div>
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-secondary" href="#">Privacy Policy</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-secondary" href="#">Terms and conditions</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-secondary" href="#">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </footer>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addEmployeeModalLabel">Add New Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addEmployeeForm" novalidate>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                                <div class="invalid-feedback">Please enter a first name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                                <div class="invalid-feedback">Please enter a last name.</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone" required pattern="[0-9+\-\s()]{10,15}">
+                                <div class="invalid-feedback">Please enter a valid phone number.</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="department" class="form-label">Department</label>
+                                <select class="form-select" id="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Sales">Sales</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a department.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="position" class="form-label">Position</label>
+                                <input type="text" class="form-control" id="position" required>
+                                <div class="invalid-feedback">Please enter a position.</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="salary" class="form-label">Salary</label>
+                                <input type="number" class="form-control" id="salary" min="1000" required>
+                                <div class="invalid-feedback">Please enter a valid salary (minimum 1000).</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="status" class="form-label">Status</label>
+                                <select class="form-select" id="status" required>
+                                    <option value="">Select Status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="On Leave">On Leave</option>
+                                    <option value="Terminated">Terminated</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a status.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="joinDate" class="form-label">Join Date</label>
+                            <input type="date" class="form-control" id="joinDate" required>
+                            <div class="invalid-feedback">Please select a join date.</div>
+                        </div>
+                        <div id="formErrorMessage" class="alert alert-danger d-none">
+                            Please fix the errors in the form before submitting.
+                        </div>
+                        <div id="submitSuccess" class="alert alert-success d-none">
+                            Employee added successfully!
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveEmployeeBtn">Save Employee</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

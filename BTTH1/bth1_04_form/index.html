@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Form Template</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Employee Information Form</h2>
+            
+            <form id="employeeForm" novalidate>
+                <!-- Basic Info Section -->
+                <div class="section-header">
+                    <i class="fas fa-user me-2"></i>Basic Info
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="employeeId" class="col-sm-3 col-form-label">Employee ID</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control border-0" id="employeeId" name="employeeId" value="5" readonly>
+                        <div class="error-message">Employee ID is required</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="lastName" class="col-sm-3 col-form-label">Last Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        <div class="error-message" id="lastName-error"></div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            <span class="input-group-text"><i class="fas fa-user-edit"></i></span>
+                        </div>
+                        <div class="error-message" id="firstName-error"></div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label">Gender</label>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" required>
+                            <label class="form-check-label" for="genderMale">
+                                <i class="fas fa-mars me-1"></i>Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female">
+                            <label class="form-check-label" for="genderFemale">
+                                <i class="fas fa-venus me-1"></i>Female
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="genderOther1" value="Other1">
+                            <label class="form-check-label" for="genderOther1">
+                                <i class="fas fa-genderless me-1"></i>Other
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="genderOther2" value="Other2">
+                            <label class="form-check-label" for="genderOther2">
+                                <i class="fas fa-genderless me-1"></i>Prefer not to say
+                            </label>
+                        </div>
+                        <div class="error-message">Please select a gender</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="title" class="col-sm-3 col-form-label">Title</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="title" name="title" required>
+                        <div class="error-message">Title is required</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="suffix" class="col-sm-3 col-form-label">Suffix</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="suffix" name="suffix">
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="birthDate" class="col-sm-3 col-form-label">Birth Date</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="datetime-local" class="form-control" id="birthDate" name="birthDate" required>
+                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                        <div class="error-message" id="birthDate-error"></div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="hireDate" class="col-sm-3 col-form-label">Hire Date</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="datetime-local" class="form-control" id="hireDate" name="hireDate" required>
+                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                        <div class="error-message" id="hireDate-error"></div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="ssn" class="col-sm-3 col-form-label">SSN # (if applicable)</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="ssn" name="ssn" pattern="\d{3}-\d{2}-\d{4}">
+                            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                        </div>
+                        <div class="error-message">SSN must be in format XXX-XX-XXXX</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="reportsTo" class="col-sm-3 col-form-label">Reports To</label>
+                    <div class="col-sm-9">
+                        <select class="form-select" id="reportsTo" name="reportsTo" required>
+                            <option value="">Select Manager</option>
+                            <option value="1">Buchanan</option>
+                            <option value="2">Smith</option>
+                            <option value="3">Johnson</option>
+                            <option value="4">Williams</option>
+                        </select>
+                        <div class="error-message">Please select a manager</div>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Section -->
+                <div class="section-header">
+                    <i class="fas fa-address-book me-2"></i>Contact Info
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="address" class="col-sm-3 col-form-label">Address</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="address" name="address" required>
+                            <span class="input-group-text"><i class="fas fa-home"></i></span>
+                        </div>
+                        <div class="error-message">Address is required</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="city" class="col-sm-3 col-form-label">City</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="city" name="city" required>
+                        <div class="error-message">City is required</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="region" class="col-sm-3 col-form-label">Region</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="region" name="region">
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="postalCode" class="col-sm-3 col-form-label">Postal Code</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+                        <div class="error-message">Postal code is required</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="country" class="col-sm-3 col-form-label">Country</label>
+                    <div class="col-sm-9">
+                        <select class="form-select" id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                            <option value="RU">Russian Federation</option>
+                            <option value="FR">France</option>
+                            <option value="DE">Germany</option>
+                        </select>
+                        <div class="error-message">Please select a country</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="^$$\d{3}$$\d{3}-\d{4}$" placeholder="(123)456-7890" required>
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        </div>
+                        <div class="error-message">Please enter a valid phone number in format (123)456-7890</div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="photo" class="col-sm-3 col-form-label">Photo</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                    </div>
+                </div>
+                
+                <!-- Optional Info Section -->
+                <div class="section-header">
+                    <i class="fas fa-info-circle me-2"></i>Optional Info
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="notes" class="col-sm-3 col-form-label">Notes</label>
+                    <div class="col-sm-9">
+                        <div class="rich-text-toolbar">
+                            <button type="button" title="Bold"><i class="fas fa-bold"></i></button>
+                            <button type="button" title="Italic"><i class="fas fa-italic"></i></button>
+                            <button type="button" title="Underline"><i class="fas fa-underline"></i></button>
+                            <button type="button" title="Strikethrough"><i class="fas fa-strikethrough"></i></button>
+                            <button type="button" title="Align Left"><i class="fas fa-align-left"></i></button>
+                            <button type="button" title="Align Center"><i class="fas fa-align-center"></i></button>
+                            <button type="button" title="Align Right"><i class="fas fa-align-right"></i></button>
+                            <button type="button" title="Undo"><i class="fas fa-undo"></i></button>
+                            <button type="button" title="Redo"><i class="fas fa-redo"></i></button>
+                            <button type="button" title="Link"><i class="fas fa-link"></i></button>
+                            <button type="button" title="Image"><i class="fas fa-image"></i></button>
+                        </div>
+                        <div class="rich-text-content" contenteditable="true" id="notes"></div>
+                        <input type="hidden" name="notesContent">
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label">Preferred Shift</label>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="shiftRegular" name="shift" value="Regular">
+                            <label class="form-check-label" for="shiftRegular">
+                                <i class="fas fa-sun me-1"></i>Regular
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="shiftEvening" name="shift" value="Evening">
+                            <label class="form-check-label" for="shiftEvening">
+                                <i class="fas fa-moon me-1"></i>Evening
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label">Active?</label>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="active" name="active" checked>
+                            <label class="form-check-label" for="active">
+                                <i class="fas fa-check-circle me-1"></i>Yes
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label">Are you human?</label>
+                    <div class="col-sm-9">
+                        <div class="captcha-container">
+                            <div class="captcha-text">TIDAWO</div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary mt-2">
+                                <i class="fas fa-sync-alt me-1"></i>Click to change
+                            </button>
+                        </div>
+                        <input type="text" class="form-control" id="captcha" name="captcha" required>
+                        <div class="error-message">Please enter the captcha text</div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="float-start">
+                            <span class="text-danger">* required</span>
+                        </div>
+                        <div class="float-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-1"></i>Submit
+                            </button>
+                            <button type="button" class="btn btn-secondary me-2">
+                                <i class="fas fa-times me-1"></i>Cancel
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
