@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap-5.3.6-dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/fontawesome-free-6.7.2-web/css/all.min.css">    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-form-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .form-col {
+            flex: 1;
+            width: 100%;
+        }
+        
+        .form-control {
+            width: 100%;
+            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            box-sizing: border-box;
+        }
+        
+
+        
+        textarea.form-control {
+            min-height: 240px;
+            resize: vertical;
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-send {
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-send:hover {
+            background-color: #46b8da;
+        }
+        
+        .required-message {
+            color: #6c757d;
+            font-style: italic;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-form-container {
+                padding: 15px;
+                margin: 20px auto;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            textarea.form-control {
+                min-height: 180px;
+            }
+            
+            .form-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .required-message {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-form-container">
+            <h2 class="mb-4">Get in touch with us by filling contact form below</h2>
+            
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" placeholder="* Enter your full name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control" placeholder="* Enter your email address" required>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Enter your subject">
+                </div>
+                
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="* Your message here..." required></textarea>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-send">Send message</button>
+                    </div>
+                    <div class="col-md-6 justify-content-end d-flex">
+                        <p class="required-message mt-2">* Please fill all required form field, thanks!</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="assets/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

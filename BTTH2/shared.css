@@ -1,0 +1,56 @@
+/* Shared styles for Travel Goals website */
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: url('assets/images/ocean.jpg') center/cover;
+    height: 80vh;
+}
+
+header {
+    border-bottom: 4px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+    padding: 0.5rem 0;
+}
+
+#page-logo a {
+    font-family: 'Oleo Script', sans-serif;
+    color: #F6FFA4;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    display: inline-block;
+    background-color: transparent;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+nav li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: #F6FFA4;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a:active {
+    color: #19957a;
+    border-bottom: 2px solid #19957a;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

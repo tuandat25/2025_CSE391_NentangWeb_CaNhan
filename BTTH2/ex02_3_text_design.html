@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Connects the Underlying
+Conceptual Structure</title>
+    <style>
+        /* Cài đặt chung cho trang */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Sử dụng font hiện đại, dễ đọc */
+            margin: 0;
+            padding: 40px 20px;
+            /* Thêm padding trên dưới và hai bên */
+            background-color: #ffffff;
+            /* Màu nền xám xanh nhạt, dịu mắt */
+            color: #333a45;
+            /* Màu chữ chính đậm hơn một chút */
+            display: flex;
+            /* Sử dụng flex để căn giữa nội dung chính */
+            flex-direction: column;
+            /* Sắp xếp các phần tử con theo chiều dọc */
+            align-items: center;
+            /* Căn giữa các phần tử con theo chiều ngang */
+            min-height: 100vh;
+            /* Đảm bảo body chiếm ít nhất toàn bộ chiều cao màn hình */
+        }
+
+        /* Container chính để giới hạn chiều rộng và căn giữa */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            /* Giới hạn chiều rộng tối đa */
+        }
+
+        /* Phần tiêu đề chính của trang */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            /* Tăng khoảng cách dưới tiêu đề */
+        }
+
+        .page-header h2 {
+            font-size: 2.5em;
+            /* Kích thước chữ lớn hơn cho tiêu đề chính */
+            font-weight: 400;
+            /* Trọng lượng font nhẹ */
+            color: #000000;
+            /* Màu chữ đậm, gần như đen */
+            letter-spacing: -0.5px;
+            /* Giảm khoảng cách chữ một chút */
+            margin: 0;
+        }
+
+        /* Khu vực nội dung chính, sử dụng Flexbox để sắp xếp */
+        .content-area {
+            display: flex;
+            gap: 50px;
+            /* Khoảng cách lớn hơn giữa card và phần text chính */
+            align-items: flex-start;
+            /* Căn các item con theo phía trên */
+        }
+
+        /* Kiểu cho card bên trái */
+        .card {
+            background-color: #ffffff;
+            /* Nền trắng cho card */
+            padding: 35px;
+            /* Tăng padding cho card */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+            /* Đổ bóng mềm mại hơn */
+            flex-basis: 38%;
+            /* Card chiếm khoảng 38% chiều rộng */
+            max-width: 420px;
+            /* Giới hạn chiều rộng tối đa của card */
+        }
+
+        .card h3 {
+            font-size: 1.6em;
+            /* Kích thước chữ lớn hơn cho tiêu đề card */
+            color: #000000;
+            margin-top: 0;
+            margin-bottom: 20px;
+            /* Tăng khoảng cách dưới tiêu đề card */
+            font-weight: 300;
+            /* Trọng lượng font trung bình */
+        }
+
+        .card p {
+            font-size: 1em;
+            /* Kích thước chữ chuẩn cho nội dung card */
+            color: #5a6778;
+            /* Màu chữ nhạt hơn cho đoạn văn trong card */
+            line-height: 1.6;
+        }
+
+        .author-info {
+            margin-top: 30px;
+            padding-top: 20px;
+
+            border-top: 1px solid #e2e8f0;
+            /* Đường kẻ ngang phân cách nhạt hơn */
+        }
+
+        .author-name {
+            font-weight: 600;
+            /* Tăng độ đậm cho tên tác giả */
+            color: #000000 !important;
+            /* Màu chữ đậm cho tên tác giả */
+            margin-bottom: 4px;
+            font-size: 1.05em;
+        }
+
+        .author-title {
+            font-size: 0.9em;
+            color: #2B538A !important;
+            /* Màu xanh cho chức vụ */
+            font-weight: 400;
+            /* Trọng lượng font nhẹ hơn cho chức vụ */
+            margin-top: 0;
+        }
+
+        /* Kiểu cho phần text chính bên phải */
+        .main-text {
+            flex-basis: 58%;
+            /* Phần text chính chiếm khoảng 58% chiều rộng */
+        }
+
+        .main-text p {
+            font-size: 1.05em;
+            /* Kích thước chữ lớn hơn một chút cho dễ đọc */
+            color: #333a45;
+            line-height: 1.8;
+            /* Tăng khoảng cách dòng cho dễ đọc hơn */
+            margin-top: 0;
+            margin-bottom: 25px;
+            /* Khoảng cách giữa các đoạn văn */
+        }
+
+        /* Responsive: Điều chỉnh cho màn hình nhỏ hơn */
+        @media (max-width: 992px) {
+
+            /* Điểm ngắt cho tablet nhỏ hơn */
+            .content-area {
+                flex-direction: column;
+                /* Chuyển sang bố cục cột */
+                align-items: center;
+                /* Căn giữa các item */
+                gap: 40px;
+            }
+
+            .card,
+            .main-text {
+                flex-basis: 100%;
+                /* Chiếm toàn bộ chiều rộng */
+                max-width: 600px;
+                /* Giới hạn chiều rộng để không quá dài trên tablet */
+            }
+
+            .main-text {
+                padding-top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Điểm ngắt cho mobile */
+            body {
+                padding: 20px 15px;
+                /* Giảm padding trên mobile */
+            }
+
+            .page-header {
+                margin-bottom: 40px;
+            }
+
+            .page-header h2 {
+                font-size: 2.2em;
+            }
+
+            .page-header h2 {
+                font-size: 1.6em;
+            }
+
+            .card,
+            .main-text {
+                max-width: 100%;
+                /* Cho phép chiếm toàn bộ chiều rộng container trên mobile */
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .card h3 {
+                font-size: 1.4em;
+            }
+
+            .main-text p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h2>Wireframe Connects the Underlying</h2>
+            <h2>Conceptual Structure</h2>
+        </header>
+
+        <main class="content-area">
+            <aside class="card">
+                <h3>Wireframe Connects the Underlying Conceptual Structure</h3>
+                <p class="" style="letter-spacing: 0.08em; line-height: 2; margin: 0 ;margin-bottom: 20px;">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts far from the countries Vokalia and Consonantia, there live the blind texts.
+                </p>
+                <div class="author-info">
+                    <p class="author-name">Louie Jie Mahusay</p>
+                    <p class="author-title">CEO, Founder</p>
+                </div>
+            </aside>
+
+            <section class="main-text">
+                <p style="font-weight: 350;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p style="font-weight: 500; font-size: 1.0em;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p style="font-weight: 350;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Far
+                    away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                    blind texts far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
